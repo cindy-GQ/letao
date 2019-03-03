@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>乐淘商品分类</title>
+    <!-- 引入MUI css样式文件(MUI组件丰富 大部分支持移动端原生UI框架) -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标库的文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入本地分类样式 -->
+    <link rel="stylesheet" href="./less/category.css">
+</head>
+
+<body>
+    <!-- 代码模块 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#"><i class="fa fa-arrow-left"></i></a>
+        </div>
+        <div class="center mui-search">
+            <input type="search" class="mui-input-clear" placeholder="请输入要搜索的商品">
+        </div>
+        <!-- <form class="center mui-input-group">
+            <div class="mui-input-row">
+                <input type="text" placeholder="请输入要搜索的商品">
+            </div>
+        </form>     -->
+        <div class="right">
+            <i class="fa fa-search"></i>
+        </div>
+    </header>
+    <!-- 主题区域 -->
+    <main id="main">
+        <div class="mui-off-canvas-wrap mui-draggable">
+            <!-- 菜单容器 -->
+            <aside class="mui-off-canvas-left">
+              <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                  <!-- 菜单具体展示内容 -->
+                  ...
+                </div>
+              </div>
+            </aside>
+            <!-- 主页面容器 -->
+            <div class="mui-inner-wrap">
+              <!-- 主页面标题 -->
+              <header class="mui-bar mui-bar-nav">
+                <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+                <h1 class="mui-title">标题</h1>
+              </header>
+              <div class="mui-content mui-scroll-wrapper">
+                <div class="mui-scroll">
+                  <!-- 主界面具体展示内容 -->
+                  ...
+                </div>
+              </div>  
+            </div>
+          </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 引入MUI 组件 js功能文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 获取元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 有请求使用到模板 引入模板引擎 template-web.js -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入本地js -->
+    <script src="./js/category.js"></script>
+</body>
+
+</html>

@@ -76,30 +76,3 @@ h6 {
   display: block;
   line-height: 1;
 }
-#main a {
-  display: block;
-}
-#main a img {
-  width: 100%;
-}
-/* 导航条样式区域 */
-#nav {
-  padding: .1rem;
-}
-/* 广告区域样式 */
-#banner {
-  padding: 0 .1rem;
-}
-#banner .left a {
-  display: flex;
-}
-#banner .left a img {
-  width: 50%;
-  height: 1.2rem;
-}
-#banner .right a img {
-  height: 2.4rem;
-}
-#brand {
-  padding: .1rem;
-}
