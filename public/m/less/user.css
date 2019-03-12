@@ -122,3 +122,6 @@ h6 {
   background-color: #006699;
   border: 0.01rem solid #006699;
 }
+#main .btn-exit {
+  width: 100%;
+}

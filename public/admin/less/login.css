@@ -1,0 +1,39 @@
+body {
+  background: #2f4050;
+}
+body #login {
+  width: 550px;
+  height: 350px;
+  border-radius: 20px;
+  background-color: #fff;
+  margin: 150px auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+body #login img {
+  width: 160px;
+  height: 160px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px yellowgreen;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body #login .content {
+  margin-bottom: 10px;
+  width: 400px;
+}
+body #login .content span {
+  background-color: #337ab7;
+  font-weight: bold;
+  font-size: 16px;
+  color: #fff;
+}
+body #login .btn-login {
+  width: 400px;
+}

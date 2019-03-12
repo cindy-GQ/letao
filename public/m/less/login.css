@@ -122,3 +122,9 @@ h6 {
   background-color: #006699;
   border: 0.01rem solid #006699;
 }
+#main .mui-input-row input {
+  font-size: .14rem;
+}
+#main .mui-input-row:after {
+  left: 0;
+}

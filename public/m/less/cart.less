@@ -1,0 +1,71 @@
+@import 'base.less';
+#main{
+   
+    .cart-list{
+        padding-bottom: .35rem;
+        li{
+            a{
+                display: flex;
+                .left{
+                    width: .8rem;
+                    text-align: center;
+                    img{
+                        width: 100%;
+                        // display: block;
+                    }
+                    .mui-checkbox input[type=checkbox]{
+                        position: static;
+                        &::before{
+                            color:pink;
+                        }
+                        
+                    }
+
+                }
+                .right{
+                    flex: 1;
+                    line-height: .24rem;
+                    .product-name{
+                        color:#666;
+                      
+                    }
+                    .product-price{
+                        color:#666;
+                        strong{
+                            color:red;
+                        }
+                    }
+                    .product-params{
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: .12rem;
+                    }
+                }
+                &:not(.mui-btn) {
+                    // 是否允许内容换行 默认是nomarl 不设置 nowrap 强制不换行
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+#order{
+    width: 100%;
+    height: .35rem;
+    line-height: .35rem;
+    position: fixed;
+    bottom:.45rem;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    z-index: 99;
+    .order-total{
+        margin-left: .15rem;
+        color: red;
+        font-weight: bold;
+    }
+}
+.edit-list .mui-table-view-cell {
+    padding: 0;
+    text-align: left;
+}

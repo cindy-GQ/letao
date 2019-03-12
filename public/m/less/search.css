@@ -122,3 +122,27 @@ h6 {
   background-color: #006699;
   border: 0.01rem solid #006699;
 }
+#main .search-form form {
+  display: flex;
+  padding: .1rem;
+}
+#main .search-form form input {
+  flex: 1;
+  height: .36rem;
+  background-color: #fff;
+  text-align: left;
+  font-size: .14rem;
+  border: 0.01rem solid #006699;
+  border-radius: 0.06rem 0 0 0.06rem;
+  border-right: 0;
+}
+#main .search-form form button {
+  width: .6rem;
+  height: .36rem;
+  border-radius: 0 0.06rem 0.06rem 0;
+  background-color: #006699;
+  border: 0.01rem solid #006699;
+}
+#main .search-history .mui-table-view-cell::after {
+  left: 0;
+}

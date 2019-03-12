@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        
+         /* 6. 点击历史记录的某个记录跳转到商品列表搜索功能函数 */
+    function gotoProductlist() {
+        /* 1. 点击列表中的某个元素要跳转到商品列表实现搜索功能
+        2. 获取当前点击列表的要跳转传过去搜索的值
+        3. 使用location跳转页面 并且把当前这个值传过去 */
+        // 1. 给所有列表绑定点击事件
+        $('.search-history .mui-table-view').on('tap', 'li', function (e) {
+            // console.log(e);
+            // 7.3 判断如果isDelete依然还是false 表示没点过删除 就可以跳转
+            if (isDelete == false) {
+                // 2. 获取当前列表data-search的值,判断历史数据是否为空
+                $(this).data('search')==null?location.reload():location = 'productlist.html?search=' + $(this).data('search') + '&time=' + new Date().getTime();
+                // console.log(search);
+                if (search==null) {
+                    location.reload()
+                }else{
+                // 3. 跳转到商品列表 把当前search传过去
+                location = 'productlist.html?search=' + search + '&time=' + new Date().getTime();
+                }
+                
+            }
+            // 7.4 还要重置一下 为了他下次还能继续点
+            isDelete = false;
+        });
+    }
+
+
+
+   
+        </script>
+</body>
+</html>

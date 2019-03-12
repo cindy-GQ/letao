@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <!-- 引入MUI css样式文件(MUI组件丰富 大部分支持移动端原生UI框架) -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标库的文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入本地分类样式 -->
+    <link rel="stylesheet" href="./less/cart.css">
+</head>
+
+<body>
+    <!-- 代码模块 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>购物车</h4>
+        </div>
+
+        <div class="right">
+            <a href="#"><i class="fa fa-refresh"></i></a>
+        </div>
+    </header>
+    <!-- 主题区域 -->
+    <main id="main">
+        <div class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <ul class="mui-table-view cart-list">
+                    <li class="mui-table-view-cell">
+                        <a href="#" class="mui-navigate-right mui-slider-handle">
+                            <div class="left">
+                                <img src="/mobile/images/product.jpg" alt="">
+                                <div class="mui-input-row mui-checkbox mui-left">
+                                    <input name="checkbox" value="Item 2" type="checkbox" checked>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <p class="product-name">
+                                    匡威三星标1970s converse复刻 142334c 144757c三星标黑色高帮
+                                </p>
+                                <p class="product-price">
+                                    <strong>¥799.1</strong>
+                                    <del>¥1999</del>
+                                </p>
+                                <div class="product-params">
+                                    <div class="size">
+                                        <span>鞋码: 40</span>
+                                    </div>
+                                    <div class="num">
+                                        <span>数量: x4双</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="mui-slider-right mui-disabled">
+                            <a class="mui-btn mui-btn-blue btn-edit">编辑</a>
+                            <a class="mui-btn mui-btn-red btn-del">删除</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    <!-- 订单金额区域 -->
+    <section id="order">
+        <div class="order-total">
+            订单总金额:
+            ¥<span>0.00</span>
+        </div>
+        <button class="mui-btn mui-btn-danger" type="button">生成订单</button>
+    </section>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html" class="active">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 准备模板 -->
+    <script id="cartProductTpl" type="text/html">
+        {{if data.length>0}}
+        {{each data value i}}
+                <li class="mui-table-view-cell">
+                        <a href="#" class="mui-navigate-right mui-slider-handle">
+                                <div class="left">
+                                    <img src="{{value.pic[0].picAddr}}" alt="">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <input name="checkbox" value="Item 2" type="checkbox" data-price ="{{value.price}}" data-num ="{{value.num}}" checked>
+                                    </div>
+                                </div>
+                                <div class="right">
+                                    <p class="product-name">
+                                       {{value.proName}}
+                                    </p>
+                                    <p class="product-price">
+                                        <strong>¥{{value.price}}</strong>
+                                        <del>¥{{value.oldPrice}}</del>
+                                    </p>
+                                    <div class="product-params">
+                                        <div class="size">
+                                            <span>鞋码: {{value.size}}</span>
+                                        </div>
+                                        <div class="num">
+                                            <span>数量: x {{value.num}} 双</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                    <div class="mui-slider-right mui-disabled">
+                        <a class="mui-btn mui-btn-blue btn-edit" data-product = "{{value}}">编辑</a>
+                        <a class="mui-btn mui-btn-red btn-del" data-id = "{{value.id}}">删除</a>
+                    </div>
+                </li>
+                {{/each}}
+                {{else}}
+                <li class="mui-table-view-cell">
+                    现在还没有商品哦!请前往商品区添加吧!
+                </li>    
+                {{/if}}
+    </script>
+    <!-- 编辑模板 -->
+    <script id="editorTpl" type="text/html">
+        <ul class="mui-table-view edit-list">
+        <li class="mui-table-view-cell edit-size">
+                尺码：
+                <span>  
+                   {{each productSize value i}}
+                  <button type="button" class="mui-btn {{value == size ? 'mui-btn-warning' : ''}}" data-size ="{{value}}">{{value}}</button>
+                  {{/each}}
+                </span>
+            </li>
+            <li class="mui-table-view-cell">
+                数量：
+                <div class="mui-numbox" data-numbox-min='1' data-numbox-max='{{productNum}}'>
+                    <button class="mui-btn mui-btn-numbox-minus" type="button">-</button>
+                    <input class="mui-input-numbox" type="number" value="{{num}}"/>
+                    <button class="mui-btn mui-btn-numbox-plus" type="button">+</button>
+                </div>
+                剩余：<span>{{productNum}}件</span>
+            </li>
+        </ul>
+    </script>
+    <!-- 引入MUI 组件 js功能文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 获取元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 有请求使用到模板 引入模板引擎 template-web.js -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入本地js -->
+    <script src="./js/cart.js"></script>
+</body>
+
+</html>

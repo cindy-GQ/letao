@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- 设置视口 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>商品列表</title>
+    <!-- 引入MUI css样式文件(MUI组件丰富 大部分支持移动端原生UI框架) -->
+    <link rel="stylesheet" href="./lib/mui/css/mui.css">
+    <!-- 引入字体图标库的文件 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.css">
+    <!-- 引入本地分类样式 -->
+    <link rel="stylesheet" href="./less/productlist.css">
+</head>
+
+<body>
+    <!-- 代码模块 -->
+    <!-- 头部区域 -->
+    <header id="header">
+        <div class="left">
+            <a href="#" class="fa fa-arrow-left"></a>
+        </div>
+        <div class="center">
+            <h4>商品列表</h4>
+        </div>
+
+        <div class="right">
+
+        </div>
+    </header>
+    <!-- 主题区域 -->
+    <main id="main">
+        <div id="pullrefresh" class="mui-content mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <!-- 搜索表单 -->
+                <div class="search-form">
+                    <form action="#">
+                        <input type="search" placeholder="请输入您要搜索的商品" class="input-search">
+                        <button type="button" class="mui-btn mui-btn-primary button-search">搜索</button>
+                    </form>
+                </div>
+                <!-- 搜索列表 -->
+                <div class="product-list">
+                    <div class="mui-card">
+                        <!--页眉，放置标题-->
+                        <div class="mui-card-header product-nav">
+                            <a href="#" data-type="time" data-sort="2">
+                                上架时间
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="price" data-sort="2">价格
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="num" data-sort="2">销量
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <a href="#" data-type="discount" data-sort="2">折扣
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                        </div>
+                        <!--内容区-->
+                        <div class="mui-card-content">
+                            <div class="mui-row prolist-content">
+                                <!-- <div class="mui-col-xs-6">
+                                    <a href="#">
+                                            <img src="/mobile/images/detail.jpg" alt="" class="product-img">
+                                            <p class="product-name">【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋</p>
+                                            <p class="product-price">
+                                                <span>¥99</span>
+                                                <del>¥899</del>
+                                            </p>
+                                            <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </a>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <a href="#">
+                                            <img src="/mobile/images/detail.jpg" alt="" class="product-img">
+                                            <p class="product-name">【莹恋】MIZUNO美津浓V1GA159002乒乓球鞋男鞋女鞋室内综合训练鞋</p>
+                                            <p class="product-price">
+                                                <span>¥99</span>
+                                                <del>¥899</del>
+                                            </p>
+                                            <button type="button" class="mui-btn mui-btn-primary product-buy">立即购买</button>
+                                    </a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-row">
+            <div class="mui-col-xs-3">
+                <a href="index.html">
+                    <i class="fa fa-home"></i>
+                    <span>首页</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="category.html" class="active">
+                    <i class="fa fa-bars"></i>
+                    <span>分类</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="cart.html">
+                    <i class="fa fa-shopping-cart"></i>
+                    <span>购物车</span>
+                </a>
+            </div>
+            <div class="mui-col-xs-3">
+                <a href="user.html">
+                    <i class="fa fa-user"></i>
+                    <span>个人中心</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <!-- 模板代码块 -->
+    <script id="productListTpl" type="text/html">
+    {{each data value i}}
+    <div class="mui-col-xs-6">
+       <div class="product">
+            <img src="{{value.pic[0].picAddr}}" alt="" class="product-img">
+            <p class="product-name">{{value.proName}}</p>
+            <p class="product-price">
+                <span>{{value.price}}</span>
+                <del>{{value.oldPrice}}</del>
+            </p>
+            <button type="button" class="mui-btn mui-btn-primary product-buy" data-id="{{value.id}}">立即购买</button>
+        </div>
+    </div>
+    {{/each}}
+    </script>
+
+    <!-- 引入MUI 组件 js功能文件 -->
+    <script src="./lib/mui/js/mui.js"></script>
+    <!-- 引入zepto 获取元素 发送请求 -->
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <!-- 有请求使用到模板 引入模板引擎 template-web.js -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- 引入本地js -->
+    <script src="./js/productlist.js"></script>
+</body>
+
+</html>

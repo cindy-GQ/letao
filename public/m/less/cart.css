@@ -122,3 +122,63 @@ h6 {
   background-color: #006699;
   border: 0.01rem solid #006699;
 }
+#main .cart-list {
+  padding-bottom: .35rem;
+}
+#main .cart-list li a {
+  display: flex;
+}
+#main .cart-list li a .left {
+  width: .8rem;
+  text-align: center;
+}
+#main .cart-list li a .left img {
+  width: 100%;
+}
+#main .cart-list li a .left .mui-checkbox input[type=checkbox] {
+  position: static;
+}
+#main .cart-list li a .left .mui-checkbox input[type=checkbox]::before {
+  color: pink;
+}
+#main .cart-list li a .right {
+  flex: 1;
+  line-height: .24rem;
+}
+#main .cart-list li a .right .product-name {
+  color: #666;
+}
+#main .cart-list li a .right .product-price {
+  color: #666;
+}
+#main .cart-list li a .right .product-price strong {
+  color: red;
+}
+#main .cart-list li a .right .product-params {
+  display: flex;
+  justify-content: space-between;
+  margin-top: .12rem;
+}
+#main .cart-list li a:not(.mui-btn) {
+  white-space: normal;
+}
+#order {
+  width: 100%;
+  height: .35rem;
+  line-height: .35rem;
+  position: fixed;
+  bottom: .45rem;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  z-index: 99;
+}
+#order .order-total {
+  margin-left: .15rem;
+  color: red;
+  font-weight: bold;
+}
+.edit-list .mui-table-view-cell {
+  padding: 0;
+  text-align: left;
+}

@@ -122,3 +122,29 @@ h6 {
   background-color: #006699;
   border: 0.01rem solid #006699;
 }
+#main .detail-list .detail-price strong {
+  color: red;
+}
+#main .detail-list .detail-size span button {
+  margin-bottom: .05rem;
+  vertical-align: middle;
+}
+#footer {
+  background-color: #ccc;
+  text-align: center;
+  line-height: .45rem;
+}
+#footer .mui-row a {
+  display: block;
+  padding: 0;
+}
+#footer .mui-row a .fa-shopping-cart {
+  font-size: 20px;
+  color: #333;
+}
+#footer .mui-row > .mui-col-xs-5 {
+  padding: .06rem .05rem;
+}
+#footer .mui-row > .mui-col-xs-5 button {
+  width: 100%;
+}

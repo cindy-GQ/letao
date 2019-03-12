@@ -18,9 +18,9 @@ h6 {
 }
 #header {
   width: 100%;
+  line-height: .45rem;
   display: flex;
   background-color: #006699;
-  color: #fff;
   position: fixed;
   top: 0;
   left: 0;
@@ -29,25 +29,43 @@ h6 {
   width: .45rem;
   height: .45rem;
 }
+#header .left a {
+  display: block;
+  color: #fff;
+  line-height: .45rem;
+  text-align: center;
+}
 #header .center {
   text-align: center;
   flex: 1;
 }
 #header .center h4 {
   line-height: .45rem;
+  color: #fff;
+}
+#header .center form input {
+  background-color: #fff;
+  padding-left: .07rem;
+  text-align: left;
+  font-size: .14rem;
+  margin-bottom: 0;
+  color: #000;
 }
 #header .right {
   width: .45rem;
   height: .45rem;
-  line-height: .45rem;
   text-align: center;
 }
-#header .right .fa-search {
+#header .right a {
+  display: block;
+}
+#header .right a i {
   font-size: .16rem;
+  color: #fff;
 }
 #main {
   background-color: #f4f4f4;
-  padding: 45px 0;
+  padding: .45rem 0;
   height: 100vh;
 }
 #main .mui-scroll-wrapper {
@@ -69,12 +87,43 @@ h6 {
   padding: .05rem 0;
   color: #fff;
 }
+#footer a.active {
+  color: orange;
+}
 #footer a i {
   font-size: .16rem;
 }
 #footer a span {
   display: block;
   line-height: 1;
+}
+.search-form {
+  margin-top: .05rem;
+  padding: .1rem;
+}
+.search-form form {
+  display: flex;
+}
+.search-form form input {
+  flex: 1;
+  height: .36rem;
+  background-color: #fff;
+  text-align: left;
+  font-size: .14rem;
+  border: 0.01rem solid #006699;
+  border-radius: 0.06rem 0 0 0.06rem;
+  border-right: 0;
+  margin-bottom: 0;
+}
+.search-form form button {
+  width: .6rem;
+  height: .36rem;
+  border-radius: 0 0.06rem 0.06rem 0;
+  background-color: #006699;
+  border: 0.01rem solid #006699;
+}
+#slide {
+  background-color: #fff;
 }
 #main a {
   display: block;

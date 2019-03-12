@@ -20,47 +20,59 @@
     <!-- 头部区域 -->
     <header id="header">
         <div class="left">
-            <a href="#"><i class="fa fa-arrow-left"></i></a>
+            <a href="#" class="fa fa-arrow-left"></a>
         </div>
-        <div class="center mui-search">
-            <input type="search" class="mui-input-clear" placeholder="请输入要搜索的商品">
+        <div class="center">
+            <form>
+                <input type="search" placeholder="请输入要搜索的商品">
+            </form>
         </div>
-        <!-- <form class="center mui-input-group">
-            <div class="mui-input-row">
-                <input type="text" placeholder="请输入要搜索的商品">
-            </div>
-        </form>     -->
+
         <div class="right">
-            <i class="fa fa-search"></i>
+            <a href="search.html"><i class="fa fa-search"></i></a>
         </div>
     </header>
     <!-- 主题区域 -->
     <main id="main">
-        <div class="mui-off-canvas-wrap mui-draggable">
-            <!-- 菜单容器 -->
-            <aside class="mui-off-canvas-left">
-              <div class="mui-scroll-wrapper">
+        <div class="category-left">
+            <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                  <!-- 菜单具体展示内容 -->
-                  ...
+                    <ul class="mui-table-view">
+                        <!-- <li class="mui-table-view-cell active">运动馆</li>
+                        <li class="mui-table-view-cell">帆布馆</li>
+                        <li class="mui-table-view-cell">潮牌馆</li>
+                        <li class="mui-table-view-cell">潮牌馆</li> -->
+                    </ul>
                 </div>
-              </div>
-            </aside>
-            <!-- 主页面容器 -->
-            <div class="mui-inner-wrap">
-              <!-- 主页面标题 -->
-              <header class="mui-bar mui-bar-nav">
-                <a class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-                <h1 class="mui-title">标题</h1>
-              </header>
-              <div class="mui-content mui-scroll-wrapper">
-                <div class="mui-scroll">
-                  <!-- 主界面具体展示内容 -->
-                  ...
-                </div>
-              </div>  
             </div>
-          </div>
+
+        </div>
+        <div class="category-right">
+            <div class="mui-scroll-wrapper">
+                <div class="mui-scroll">
+                    <div class="mui-row">
+                        <!-- <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="images/brand1.png" alt="" srcset="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="images/brand2.png" alt="" srcset="">
+                                <p>耐克</p>
+                            </a>
+                        </div>
+                        <div class="mui-col-xs-4">
+                            <a href="#">
+                                <img src="images/brand3.png" alt="" srcset="">
+                                <p>耐克</p>
+                            </a>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <!-- 底部区域 -->
     <footer id="footer">
@@ -72,7 +84,7 @@
                 </a>
             </div>
             <div class="mui-col-xs-3">
-                <a href="category.html">
+                <a href="category.html" class="active">
                     <i class="fa fa-bars"></i>
                     <span>分类</span>
                 </a>
@@ -92,6 +104,30 @@
         </div>
     </footer>
 
+
+
+    <!-- 使用模板渲染页面 -->
+    <!-- 左侧分类 -->
+    <script id="categoryLeftTpl" type="text/html">
+        {{ each rows value i }}
+        <li class="mui-table-view-cell {{ i ==0 ? 'active':'' }}" data-id="{{ value.id }}">{{ value.categoryName }}</li>
+        {{ /each }}
+    </script>
+    <!-- 右侧分类 -->
+    <script id="categoryRightTpl" type="text/html">
+        {{ if rows.length > 0}}
+        {{ each rows value i }}
+        <div class="mui-col-xs-4">
+                <a href="#">
+                    <img src="{{ value.brandLogo }}" alt="" >
+                    <p>{{ value.brandName }}</p>
+                </a>
+            </div>
+        {{ /each }}
+        {{ else }}
+         <p>物以稀为贵,欢迎小主下次光临 </p>
+        {{ /if }}
+    </script>
     <!-- 引入MUI 组件 js功能文件 -->
     <script src="./lib/mui/js/mui.js"></script>
     <!-- 引入zepto 获取元素 发送请求 -->

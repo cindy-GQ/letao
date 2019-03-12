@@ -1,0 +1,42 @@
+//引包
+@import 'base.less';
+
+#main{
+    .detail-list{
+        .detail-price{
+            strong{
+                color:red;
+            }
+        }
+        .detail-size{
+            span{
+                button{
+                    margin-bottom: .05rem;
+                    vertical-align: middle;//设置左右文字对齐,还有一种方式就是给最外边盒子一个和按钮一样的行高
+                }
+            }
+        }
+    }
+}
+
+#footer{
+    background-color: #ccc;
+    text-align: center;
+    line-height: .45rem;
+    .mui-row{
+        a{
+            display: block;
+            padding: 0;
+            .fa-shopping-cart{
+                font-size: 20px;
+                color: #333;
+            }
+        }
+        >.mui-col-xs-5{
+            padding: .06rem .05rem;
+            button{
+                width: 100%;
+            }
+        }
+    }
+}

@@ -1,13 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>乐淘自己的后台</title>
+    <title>乐淘员工后台</title>
+    <!-- 引入bootstrap -->
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <!-- 引入 font-awesome-->
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="./less/login.css">
 </head>
-<body>
-    乐淘自己的后台
 
+<body>
+    <form action="" id="login" class="form-horizontal">
+        <img src="./images/1.jpg" alt="">
+        <div class="input-group content">
+            <span class="input-group-addon" id="sizing-addon2">用户名</span>
+            <input type="text" class="form-control" placeholder="请输入用户名">
+        </div>
+        <div class="input-group content">
+            <span class="input-group-addon" id="sizing-addon2">密 &nbsp;&nbsp; 码</span>
+            <input type="password" class="form-control" placeholder="请输入密码">
+        </div>
+        <button type="button" class="btn btn-primary btn-login">登录</button>
+
+    </form>
+    <!-- 引入jquery.js -->
+    <script src="./lib/jquery/jquery.js"></script>
+    <!-- 引入bootstrap.js -->
+    <script src="./lib/bootstrap/js/bootstrap.js"></script>
+    <!-- 引入模板引擎 -->
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./js/login.js"></script>
 </body>
+
 </html>
